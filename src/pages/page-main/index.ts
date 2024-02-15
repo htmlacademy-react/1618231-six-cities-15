@@ -1,4 +1,4 @@
-import PageMain from './page-main';
+import PageMain from './ui/page-main';
 
 
 export {PageMain};

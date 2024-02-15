@@ -1,4 +1,4 @@
-import Favorites from './favorites';
+import Favorites from './ui/favorites';
 
 
 export {Favorites};
