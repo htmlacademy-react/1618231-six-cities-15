@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './page-not-found.css';
 
 const PageNotFound = (): JSX.Element => (
@@ -13,9 +14,9 @@ const PageNotFound = (): JSX.Element => (
               <img src="img/honey-non.jpg" alt="image" width="300" height="215" />
               <h2 className='noplaces__title'>404</h2>
               <p className='noplaces__desk'>page not found</p>
-              <a className='noplaces__link' href = "/">
+              <Link className='noplaces__link' to = "/">
                 go to main page
-              </a>
+              </Link>
             </div>
           </section>
           <div className="cities__right-section" style={{ backgroundImage: 'url(../img/img_404.jpg)' }}></div>
