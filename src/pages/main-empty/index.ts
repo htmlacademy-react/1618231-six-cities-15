@@ -1,4 +1,4 @@
-import MainEmpty from './main-empty';
+import MainEmpty from './ui/main-empty';
 
 export {
   MainEmpty

@@ -1,4 +1,4 @@
-import FvoritesEmpty from './favorites-empty';
+import FvoritesEmpty from './ui/favorites-empty';
 
 export {
   FvoritesEmpty

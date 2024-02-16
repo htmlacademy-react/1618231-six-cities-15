@@ -1,4 +1,4 @@
-import OfferNotLogged from './offer-not-logged';
+import OfferNotLogged from './ui/offer-not-logged';
 
 
 export {
