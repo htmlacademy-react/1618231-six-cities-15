@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "D:\\react\\1618231-six-cities-15\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\react\\1618231-six-cities-15\\src\\entities\\places-list\\ui\\places-list.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\entities\\places-list\\ui\\places-list.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\react\\1618231-six-cities-15\\src\\shared\\app-types.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\shared\\app-types.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\react\\1618231-six-cities-15\\src\\pages\\offer\\ui\\offer.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\offer\\ui\\offer.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\react\\1618231-six-cities-15\\src\\pages\\page-main\\ui\\page-main.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\page-main\\ui\\page-main.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\react\\1618231-six-cities-15\\src\\features\\plasces-sorting\\ui\\places-sorting.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\features\\plasces-sorting\\ui\\places-sorting.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,41 +34,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "places-list.tsx",
-              "DocumentMoniker": "D:\\react\\1618231-six-cities-15\\src\\entities\\places-list\\ui\\places-list.tsx",
-              "RelativeDocumentMoniker": "src\\entities\\places-list\\ui\\places-list.tsx",
-              "ToolTip": "D:\\react\\1618231-six-cities-15\\src\\entities\\places-list\\ui\\places-list.tsx",
-              "RelativeToolTip": "src\\entities\\places-list\\ui\\places-list.tsx",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-02-17T05:26:28.93Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "page-main.tsx",
-              "DocumentMoniker": "D:\\react\\1618231-six-cities-15\\src\\pages\\page-main\\ui\\page-main.tsx",
-              "RelativeDocumentMoniker": "src\\pages\\page-main\\ui\\page-main.tsx",
-              "ToolTip": "D:\\react\\1618231-six-cities-15\\src\\pages\\page-main\\ui\\page-main.tsx",
-              "RelativeToolTip": "src\\pages\\page-main\\ui\\page-main.tsx",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAAAF0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-02-17T05:22:05.186Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "offer.tsx",
-              "DocumentMoniker": "D:\\react\\1618231-six-cities-15\\src\\pages\\offer\\ui\\offer.tsx",
-              "RelativeDocumentMoniker": "src\\pages\\offer\\ui\\offer.tsx",
-              "ToolTip": "D:\\react\\1618231-six-cities-15\\src\\pages\\offer\\ui\\offer.tsx",
-              "RelativeToolTip": "src\\pages\\offer\\ui\\offer.tsx",
-              "ViewState": "AQIAAOsAAAAAAAAAAAArwPwAAAAjAAAA",
+              "Title": "places-sorting.tsx",
+              "DocumentMoniker": "D:\\react\\1618231-six-cities-15\\src\\features\\plasces-sorting\\ui\\places-sorting.tsx",
+              "RelativeDocumentMoniker": "src\\features\\plasces-sorting\\ui\\places-sorting.tsx",
+              "ToolTip": "D:\\react\\1618231-six-cities-15\\src\\features\\plasces-sorting\\ui\\places-sorting.tsx",
+              "RelativeToolTip": "src\\features\\plasces-sorting\\ui\\places-sorting.tsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-02-16T19:08:15.772Z",
+              "WhenOpened": "2024-02-17T16:56:04.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "app-types.ts",
+              "DocumentMoniker": "D:\\react\\1618231-six-cities-15\\src\\shared\\app-types.ts",
+              "RelativeDocumentMoniker": "src\\shared\\app-types.ts",
+              "ToolTip": "D:\\react\\1618231-six-cities-15\\src\\shared\\app-types.ts",
+              "RelativeToolTip": "src\\shared\\app-types.ts",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-02-17T16:53:59.278Z",
               "EditorCaption": ""
             }
           ]

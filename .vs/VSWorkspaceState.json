@@ -2,11 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\entities",
-    "\\src\\entities\\places-list",
-    "\\src\\entities\\places-list\\ui",
+    "\\src\\app",
+    "\\src\\app\\store",
+    "\\src\\features",
+    "\\src\\features\\plasces-sorting",
+    "\\src\\features\\plasces-sorting\\ui",
     "\\src\\shared",
     "\\src\\widgest"
   ],
+  "SelectedNode": "\\src\\features\\plasces-sorting\\ui\\places-sorting.tsx",
   "PreviewInSolutionExplorer": false
 }
