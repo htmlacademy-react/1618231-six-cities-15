@@ -26,5 +26,12 @@ export enum FetchStatus {
   Fulfilled = 'succes',
   Rejected = 'error'
 }
-export const BACKEND_URL = 'https://15.design.htmlacademy.pro';
+
+export enum ApiActions {
+  DataFetchOffers = 'data/fetchOffers',
+  DataFetchDetailedOffer = 'data/fetchDetailedOffer',
+  DataFetchFavorites = 'data/fetchFavoritesOffers',
+}
+
+export const BACKEND_URL = 'https://15.design.htmlacademy.pro/six-cities';
 export const TIME_OUT = 3000;
