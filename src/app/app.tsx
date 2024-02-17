@@ -1,13 +1,11 @@
 import { PageNotFound } from 'src/pages/page-not-found';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { PageMain } from 'src/pages/page-main';
-import { AppRoutes } from 'src/shared/AppRoutes';
 import { Offer } from 'src/pages/offer';
 import { Login } from 'src/pages/login';
 import { Favorites } from 'src/pages/favorites';
 import { PrivatRoute } from 'src/features/privat-route';
-import { AutorizationStatus } from 'src/shared/AutorizationStatus';
-
+import { AppRoutes, AutorizationStatus } from 'src/shared/constans';
 
 const router = createBrowserRouter([
   {

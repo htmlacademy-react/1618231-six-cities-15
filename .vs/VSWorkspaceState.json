@@ -2,15 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\features",
-    "\\src\\features\\privat-route",
-    "\\src\\features\\privat-route\\ui",
-    "\\src\\pages",
-    "\\src\\pages\\offer",
-    "\\src\\pages\\offer\\ui",
+    "\\src\\entities",
+    "\\src\\entities\\places-list",
+    "\\src\\entities\\places-list\\ui",
     "\\src\\shared",
     "\\src\\widgest"
   ],
-  "SelectedNode": "\\tsconfig.json",
   "PreviewInSolutionExplorer": false
 }
