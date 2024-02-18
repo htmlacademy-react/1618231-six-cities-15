@@ -1,5 +1,6 @@
 import { Navigate } from 'react-router-dom';
-import { AppRoutes, AutorizationStatus } from 'src/shared/constats';
+import { AppRoutes } from 'src/shared/constans';
+import { AutorizationStatus } from 'src/shared/constans';
 
 
 type PrivatRouteProp = {

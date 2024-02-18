@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\store",
+    "\\src\\features",
+    "\\src\\features\\plasces-sorting",
+    "\\src\\features\\plasces-sorting\\ui",
+    "\\src\\shared",
+    "\\src\\widgest"
+  ],
+  "SelectedNode": "\\src\\features\\plasces-sorting\\ui\\places-sorting.tsx",
+  "PreviewInSolutionExplorer": false
+}
