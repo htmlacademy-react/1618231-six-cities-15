@@ -3,14 +3,15 @@ import { PlaceCard } from 'src/widgest/place-card';
 
 type OffersListProps = {
   offersList: OfferType[];
+  setActiveCard: (offer:OfferType | null) => void;
 }
 
-const PlacesList = ({offersList} : OffersListProps) => (
+const PlacesList = ({offersList, setActiveCard} : OffersListProps) => (
   <div className="cities__places-list places__list tabs__content">
     {offersList.map((offer) => (
-      <PlaceCard key={offer.id} offer = {offer} />
+      <PlaceCard key={offer.id} offer = {offer} setActiveCard = {setActiveCard}/>
     ))}
   </div>
-)
+);
 
 export default PlacesList;

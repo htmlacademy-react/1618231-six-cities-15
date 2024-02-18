@@ -3,10 +3,11 @@ import { Header } from 'src/widgest/header';
 import { Locations } from 'src/widgest/locations';
 import { PlacesSorting } from 'src/features/plasces-sorting';
 import { Map } from 'src/widgest/map';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from 'src/shared/hooks';
 import { fetchOffersList } from 'src/app/api-actions';
 import { FetchStatus } from 'src/shared/constans';
+import { OfferType } from 'src/shared/app-types';
 
 const PageMain = () => {
 
@@ -14,6 +15,8 @@ const PageMain = () => {
   const fetchStatus = useAppSelector((state) => state.offersList.status);
 
   const offersList = useAppSelector((state) => state.offersList.offers);
+
+  const [, setActiveCard] = useState<OfferType | null>();
 
   useEffect(() => {
     if (fetchStatus === FetchStatus.Idle) {
@@ -34,11 +37,11 @@ const PageMain = () => {
               <b className="places__found">312 places to stay in Amsterdam</b>
               <PlacesSorting />
               {fetchStatus === FetchStatus.Pending && <div>Идет загрузка</div>}
-              {fetchStatus === FetchStatus.Fulfilled && <PlacesList offersList ={ offersList} />}
+              {fetchStatus === FetchStatus.Fulfilled && <PlacesList offersList ={ offersList} setActiveCard = {setActiveCard} />}
               {fetchStatus === FetchStatus.Rejected && <div>Ошибка</div>}
             </section>
             <div className="cities__right-section">
-              <Map />
+              <Map/>
             </div>
           </div>
         </div>

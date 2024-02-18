@@ -14,6 +14,6 @@ const PlacesSorting = () => (
       <li className="places__option" tabIndex={0}>Top rated first</li>
     </ul>
   </form>
-)
+);
 
 export default PlacesSorting;

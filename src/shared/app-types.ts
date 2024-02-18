@@ -46,3 +46,16 @@ export type HostType = {
   avatarUrl: string;
   isPro: boolean;
 }
+
+export type UserReviewsType = {
+  id: string;
+  date: string;
+  user: UserType;
+  comment: string;
+  rating: number;
+}
+
+export type UserType ={
+  name: string;
+  avatarUrl: string;
+}

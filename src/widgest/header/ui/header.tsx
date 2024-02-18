@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { AppRoutes } from 'src/shared/constans';
 
 const Header = () => (
   <header className="header">
@@ -11,12 +13,12 @@ const Header = () => (
         <nav className="header__nav">
           <ul className="header__nav-list">
             <li className="header__nav-item user">
-              <a className="header__nav-link header__nav-link--profile" href="#">
+              <Link className="header__nav-link header__nav-link--profile" to={AppRoutes.Favorites}>
                 <div className="header__avatar-wrapper user__avatar-wrapper">
                 </div>
                 <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
                 <span className="header__favorite-count">3</span>
-              </a>
+              </Link>
             </li>
             <li className="header__nav-item">
               <a className="header__nav-link" href="#">
@@ -28,6 +30,6 @@ const Header = () => (
       </div>
     </div>
   </header>
-)
+);
 
-export default Header
+export default Header;

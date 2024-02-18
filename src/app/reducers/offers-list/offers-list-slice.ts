@@ -13,7 +13,7 @@ export type OffersListType = {
 const initialState : OffersListType = {
   offers: [],
   status: FetchStatus.Idle,
-}
+};
 
 const offersListSlise = createSlice({
   name: 'placesList',

@@ -1,17 +1,27 @@
-import { OfferType } from "src/shared/app-types";
+import { Link } from 'react-router-dom';
+import { OfferType } from 'src/shared/app-types';
+import { AppRoutes } from 'src/shared/constans';
+import { RATING_STARS } from 'src/shared/constans';
 
 type PlaceCardProp = {
   offer: OfferType;
+  setActiveCard: (offer: OfferType | null) => void;
 }
 
-const PlaceCard = ({ offer }: PlaceCardProp) => {
-  const {previewImage, price, title, type} = offer;
+const PlaceCard = ({ offer, setActiveCard }: PlaceCardProp) => {
+  const { previewImage, price, title, type, rating, id } = offer;
+  const starsRating = (rating / RATING_STARS.length * 100).toString();
+
   return (
-    <article className="cities__card place-card">
+    <article
+      onMouseEnter={() => setActiveCard(offer)}
+      onMouseLeave={() => setActiveCard(null)}
+      className="cities__card place-card"
+    >
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
+        <Link to={`${AppRoutes.Offer}/${id}`}>
           <img className="place-card__image" src={previewImage} width="260" height="200" alt="Place image" />
-        </a>
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -28,12 +38,12 @@ const PlaceCard = ({ offer }: PlaceCardProp) => {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{ width: '80%' }}></span>
-            <span className="visually-hidden">Rating</span>
+            <span style={{ width: `${starsRating}%` }}></span>
+            <span className="visually-hidden">{rating}</span>
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{title}</a>
+          <Link to={`${AppRoutes.Offer}/${id}`}>{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

@@ -33,5 +33,7 @@ export enum ApiActions {
   DataFetchFavorites = 'data/fetchFavoritesOffers',
 }
 
+export const RATING_STARS = [5,4,3,2,1];
+
 export const BACKEND_URL = 'https://15.design.htmlacademy.pro/six-cities';
 export const TIME_OUT = 3000;
