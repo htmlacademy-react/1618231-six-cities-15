@@ -1,15 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
     "\\src",
-    "\\src\\app",
-    "\\src\\app\\store",
     "\\src\\features",
-    "\\src\\features\\plasces-sorting",
-    "\\src\\features\\plasces-sorting\\ui",
+    "\\src\\features\\privat-route\\ui",
+    "\\src\\pages",
+    "\\src\\pages\\page-main",
+    "\\src\\pages\\page-main\\ui",
     "\\src\\shared",
-    "\\src\\widgest"
+    "\\src\\widgest\\map",
+    "\\src\\widgest\\map\\ui"
   ],
-  "SelectedNode": "\\src\\features\\plasces-sorting\\ui\\places-sorting.tsx",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }

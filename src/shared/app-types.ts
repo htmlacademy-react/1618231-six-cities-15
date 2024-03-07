@@ -59,3 +59,5 @@ export type UserType ={
   name: string;
   avatarUrl: string;
 }
+
+export type ReviewType = Pick<UserReviewsType, 'rating' | 'comment'>
