@@ -8,6 +8,8 @@ import { useAppDispatch, useAppSelector } from 'src/shared/hooks';
 import { fetchOffersList } from 'src/app/api-actions';
 import { FetchStatus } from 'src/shared/constans';
 import { OfferType } from 'src/shared/app-types';
+import { Nullable } from 'vitest';
+import 'leaflet/dist/leaflet.css';
 
 const PageMain = () => {
 
@@ -16,7 +18,7 @@ const PageMain = () => {
 
   const offersList = useAppSelector((state) => state.offersList.offers);
 
-  const [, setActiveCard] = useState<OfferType | null>();
+  const [activeCard, setActiveCard] = useState<Nullable<OfferType>>(null);
 
   useEffect(() => {
     if (fetchStatus === FetchStatus.Idle) {
@@ -41,7 +43,7 @@ const PageMain = () => {
               {fetchStatus === FetchStatus.Rejected && <div>Ошибка</div>}
             </section>
             <div className="cities__right-section">
-              <Map/>
+              {fetchStatus === FetchStatus.Fulfilled && <Map offers={offersList} idActiveCard={activeCard?.id} />}
             </div>
           </div>
         </div>

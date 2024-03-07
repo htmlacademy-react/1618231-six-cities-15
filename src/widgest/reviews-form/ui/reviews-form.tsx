@@ -1,13 +1,9 @@
 import { ChangeEvent, useState } from 'react';
 import { FormRating } from 'src/entities/form-rating';
-import { UserReviewsType } from 'src/shared/app-types';
-
-
-type Review = Pick<UserReviewsType, 'rating' | 'comment'>
-
+import { ReviewType } from 'src/shared/app-types';
 
 const ReviewsForm = () => {
-  const [review, setReview] = useState<Review>({ rating: 0, comment: '' });
+  const [review, setReview] = useState<ReviewType>({ rating: 0, comment: '' });
 
   const handleTextareaChange = (evt: ChangeEvent<HTMLTextAreaElement>) => {
     setReview({...review, comment: evt.target.value});
