@@ -3,12 +3,12 @@ import { fetchReviewsList } from 'src/app/api-actions';
 import { UserReviewsType } from 'src/shared/app-types';
 import { FetchStatus } from 'src/shared/constans';
 
-type ReviewsListType = {
+type ReviewsListState = {
   reviews: UserReviewsType[];
   status: FetchStatus;
 }
 
-const initialState : ReviewsListType = {
+const initialState : ReviewsListState = {
   reviews: [],
   status: FetchStatus.Idle,
 };
