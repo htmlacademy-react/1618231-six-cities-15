@@ -1,8 +1,15 @@
 import { ReviewItem } from 'src/entities/review-item';
+import { UserReviewsType } from 'src/shared/app-types';
 
-const ReviewsList = (): JSX.Element => (
+type ReviewsListProps = {
+  reviewsList: UserReviewsType[];
+}
+
+const ReviewsList = ({reviewsList } : ReviewsListProps): JSX.Element => (
   <ul className="reviews__list">
-    <ReviewItem />
+    {reviewsList.map((review) => (
+      <ReviewItem key={review.id} review={ review} />
+    )) }
   </ul>
 );
 

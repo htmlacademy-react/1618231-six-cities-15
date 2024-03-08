@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchDetailedOffer } from 'src/app/api-actions';
+import { fetchDetailedOffer, fetchReviewsList } from 'src/app/api-actions';
 import { FetchStatus } from 'src/shared/constans';
 import { useAppDispatch, useAppSelector } from 'src/shared/hooks';
 import DetailedOffer from 'src/widgest/detailed-offer/ui/detailed-offer';
@@ -10,19 +10,27 @@ const Offer = (): JSX.Element => {
   const { offerId } = useParams();
   const dispatch = useAppDispatch();
   const detailedOffer = useAppSelector((state) => state.detailedOffer.offer);
-  const status = useAppSelector((state) => state.detailedOffer.status);
+  const statusOffer = useAppSelector((state) => state.detailedOffer.status);
+  const reviewsList = useAppSelector((state) => state.reviewsList.reviews);
+  const statusReviews = useAppSelector((state) => state.reviewsList.status);
 
   useEffect(() => {
     if (offerId) {
       dispatch(fetchDetailedOffer(offerId));
+      dispatch(fetchReviewsList(offerId));
     }
 
   }, [dispatch, offerId]);
 
   return (
     <main className="page__main page__main--offer">
-      {status === FetchStatus.Pending && <div>Идет загрузка</div>}
-      {status === FetchStatus.Fulfilled && <DetailedOffer detailedOffer = {detailedOffer } />}
+      {statusOffer === FetchStatus.Pending && <div>Идет загрузка</div>}
+      {statusOffer === FetchStatus.Fulfilled &&
+        <DetailedOffer
+          detailedOffer={detailedOffer}
+          reviewsList={reviewsList}
+          statusReviews={statusReviews}
+        />}
       <div className="container">
         <section className="near-places places">
           <h2 className="near-places__title">Other places in the neighbourhood</h2>
