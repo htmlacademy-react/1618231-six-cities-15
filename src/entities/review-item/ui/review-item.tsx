@@ -22,6 +22,6 @@ const ReviewItem = (): JSX.Element => (
     </div>
   </li>
 
-)
+);
 
 export default ReviewItem;
