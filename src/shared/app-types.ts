@@ -58,6 +58,7 @@ export type UserReviewsType = {
 export type UserType ={
   name: string;
   avatarUrl: string;
+  isPro: boolean;
 }
 
 export type ReviewType = Pick<UserReviewsType, 'rating' | 'comment'>

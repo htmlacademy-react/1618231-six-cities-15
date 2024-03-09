@@ -3,7 +3,7 @@ import { Map, TileLayer } from 'leaflet';
 import { LocationType } from './app-types';
 
 
-const useMap = (mapRef: MutableRefObject<HTMLElement | null>, center? : LocationType): Map | null => {
+const useMap = (mapRef: MutableRefObject<HTMLElement | null>, center : LocationType): Map | null => {
   const [map, setMap] = useState<Map | null>(null);
   const isRenderedRef = useRef<boolean>(false);
 

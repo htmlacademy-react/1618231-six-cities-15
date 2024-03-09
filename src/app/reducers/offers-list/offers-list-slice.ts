@@ -4,13 +4,13 @@ import { OfferType } from 'src/shared/app-types';
 import { FetchStatus } from 'src/shared/constans';
 
 
-export type OffersListType = {
+export type OffersListState = {
   offers: OfferType[];
   status: FetchStatus;
 }
 
 
-const initialState : OffersListType = {
+const initialState : OffersListState = {
   offers: [],
   status: FetchStatus.Idle,
 };

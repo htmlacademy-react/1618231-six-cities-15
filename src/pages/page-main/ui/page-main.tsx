@@ -1,5 +1,4 @@
 import { PlacesList } from 'src/widgest/places-list';
-import { Header } from 'src/widgest/header';
 import { Locations } from 'src/widgest/locations';
 import { PlacesSorting } from 'src/features/plasces-sorting';
 import { Map } from 'src/widgest/map';
@@ -27,28 +26,25 @@ const PageMain = () => {
   }, [dispatch, fetchStatus]);
 
   return (
-    <div className="page page--gray page--main">
-      <Header />
-      <main className="page__main page__main--index">
-        <h1 className="visually-hidden">Cities</h1>
-        <Locations />
-        <div className="cities">
-          <div className="cities__places-container container">
-            <section className="cities__places places">
-              <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">312 places to stay in Amsterdam</b>
-              <PlacesSorting />
-              {fetchStatus === FetchStatus.Pending && <div>Идет загрузка</div>}
-              {fetchStatus === FetchStatus.Fulfilled && <PlacesList offersList ={ offersList} setActiveCard = {setActiveCard} />}
-              {fetchStatus === FetchStatus.Rejected && <div>Ошибка</div>}
-            </section>
-            <div className="cities__right-section">
-              {fetchStatus === FetchStatus.Fulfilled && <Map offers={offersList} idActiveCard={activeCard?.id} />}
-            </div>
+    <main className="page__main page__main--index">
+      <h1 className="visually-hidden">Cities</h1>
+      <Locations />
+      <div className="cities">
+        <div className="cities__places-container container">
+          <section className="cities__places places">
+            <h2 className="visually-hidden">Places</h2>
+            <b className="places__found">312 places to stay in Amsterdam</b>
+            <PlacesSorting />
+            {fetchStatus === FetchStatus.Pending && <div>Идет загрузка</div>}
+            {fetchStatus === FetchStatus.Fulfilled && <PlacesList offersList ={ offersList} setActiveCard = {setActiveCard} />}
+            {fetchStatus === FetchStatus.Rejected && <div>Ошибка</div>}
+          </section>
+          <div className="cities__right-section">
+            {fetchStatus === FetchStatus.Fulfilled && <Map offers={offersList} idActiveCard={activeCard?.id} />}
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 };
 export default PageMain;
