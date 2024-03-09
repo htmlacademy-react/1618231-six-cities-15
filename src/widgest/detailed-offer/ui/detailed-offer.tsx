@@ -2,6 +2,8 @@ import { DetailedOfferType, UserReviewsType } from 'src/shared/app-types';
 import { FetchStatus, RATING_STARS } from 'src/shared/constans';
 import { ReviewsForm } from 'src/widgest/reviews-form';
 import { ReviewsList } from 'src/widgest/reviews-list';
+import { useAppSelector } from 'src/shared/hooks';
+import { NearbyMap } from 'src/widgest/nearby-map';
 
 type DetailedOfferProps = {
   detailedOffer: DetailedOfferType;
@@ -12,6 +14,7 @@ type DetailedOfferProps = {
 const DetailedOffer = ({detailedOffer, reviewsList, statusReviews}: DetailedOfferProps): JSX.Element => {
   const { description, images, isPremium, rating, type, bedrooms, maxAdults, price, goods, host } = detailedOffer;
   const starsRating = (rating / RATING_STARS.length * 100).toString();
+  const nearbyOffers = useAppSelector((state) => state.nearbyOffers.nearbyOffers);
 
   return (
     <section className="offer">
@@ -94,14 +97,13 @@ const DetailedOffer = ({detailedOffer, reviewsList, statusReviews}: DetailedOffe
             </div>
           </div>
           <section className="offer__reviews reviews">
-            <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">1</span></h2>
-            {statusReviews === FetchStatus.Fulfilled && <ReviewsList reviewsList={reviewsList } />
- }
+            {reviewsList.length > 0 && <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">{reviewsList.length}</span></h2>}
+            {statusReviews === FetchStatus.Fulfilled && <ReviewsList reviewsList={reviewsList } />}
             <ReviewsForm />
           </section>
         </div>
       </div>
-      <section className="offer__map map"></section>
+      {nearbyOffers.length > 0 && <NearbyMap nearbyOffers={nearbyOffers} />}
     </section>
   );
 };

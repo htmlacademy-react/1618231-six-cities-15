@@ -20,3 +20,9 @@ export const fetchDetailedOffer = createAsyncThunk(ApiActions.DataFetchDetailedO
   const { data } = await api.get<DetailedOfferType>(`${FetchRoutes.Offers}/${offerId}`);
   return data;
 });
+
+export const fetchNearbyOffers = createAsyncThunk(ApiActions.DataFetchNearbyOffers, async (offerId: string) => {
+  const { data } = await api.get<OfferType[]>(`${FetchRoutes.Offers}/${offerId}/${FetchRoutes.Nearby}`);
+  return data;
+});
+
