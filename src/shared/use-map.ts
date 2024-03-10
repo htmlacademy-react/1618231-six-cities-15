@@ -32,6 +32,8 @@ const useMap = (mapRef: MutableRefObject<HTMLElement | null>, center : LocationT
       isRenderedRef.current = true;
     }
 
+    map?.setView([center.latitude, center.longitude], center.zoom);
+
   }, [mapRef, center, map]);
 
   return map;
