@@ -3,13 +3,14 @@ import { Locations } from 'src/widgest/locations';
 import { CITIES } from 'src/widgest/locations';
 import { PlacesSorting } from 'src/features/plasces-sorting';
 import { Map } from 'src/widgest/map';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useAppDispatch, useAppSelector } from 'src/shared/hooks';
 import { fetchOffersList } from 'src/app/api-actions';
 import { FetchStatus } from 'src/shared/constans';
 import { OfferType } from 'src/shared/app-types';
 import { Nullable } from 'vitest';
 import 'leaflet/dist/leaflet.css';
+import { sortingList } from 'src/features/plasces-sorting';
 
 const PageMain = () => {
 
@@ -20,8 +21,26 @@ const PageMain = () => {
 
   const [activeCard, setActiveCard] = useState<Nullable<OfferType>>(null);
   const [activeLocation, setActiveLocation] = useState(CITIES[0]);
+  const [activeSorting, setActiveSorting] = useState(sortingList.Popular);
 
   const currentOffers = offersList.filter((offer) => offer.city.name.toUpperCase() === activeLocation.toUpperCase());
+
+  const getSortedOffers = useMemo(() => {
+    if (activeSorting === sortingList.RatedFirst) {
+      return currentOffers.sort((a: OfferType, b: OfferType) => b.rating - a.rating);
+    }
+
+    if (activeSorting === sortingList.HighToLow) {
+      return currentOffers.sort((a: OfferType, b: OfferType) => b.price - a.price);
+    }
+
+    if (activeSorting === sortingList.LowToHigh) {
+      return currentOffers.sort((a: OfferType, b: OfferType) => a.price - b.price);
+    }
+
+    return currentOffers;
+
+  }, [activeSorting, currentOffers]);
 
   useEffect(() => {
     if (fetchStatus === FetchStatus.Idle) {
@@ -37,10 +56,11 @@ const PageMain = () => {
         <div className="cities__places-container container">
           <section className="cities__places places">
             <h2 className="visually-hidden">Places</h2>
-            <b className="places__found">312 places to stay in Amsterdam</b>
-            <PlacesSorting />
+            {fetchStatus === FetchStatus.Fulfilled &&
+              < b className="places__found">{currentOffers.length} places to stay in {currentOffers[0].city.name}</b>}
+            <PlacesSorting activeSorting={activeSorting} setActiveSorting={setActiveSorting}/>
             {fetchStatus === FetchStatus.Pending && <div>Идет загрузка</div>}
-            {fetchStatus === FetchStatus.Fulfilled && <PlacesList offersList ={ currentOffers} setActiveCard = {setActiveCard} />}
+            {fetchStatus === FetchStatus.Fulfilled && <PlacesList offersList ={ getSortedOffers} setActiveCard = {setActiveCard} />}
             {fetchStatus === FetchStatus.Rejected && <div>Ошибка</div>}
           </section>
           <div className="cities__right-section">
