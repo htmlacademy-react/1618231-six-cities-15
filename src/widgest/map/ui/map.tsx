@@ -8,6 +8,7 @@ import { URL_MARKER_CURRENT, URL_MARKER_DEFAULT } from 'src/shared/constans';
 type MapProps = {
   offers: OfferType[];
   idActiveCard?: string | undefined;
+  // center: LocationType;
 }
 
 const defaultMarker = new Icon({
@@ -24,7 +25,7 @@ const customMarker = new Icon({
 
 const Map = (props: MapProps) => {
   const { offers, idActiveCard } = props;
-  const center = offers[0].location;
+  const center = offers[0] ? offers[0].city.location : { latitude: 0, longitude: 0, zoom: 0 };
 
   const mapRef = useRef(null);
   const map = useMap(mapRef, center);
@@ -40,7 +41,7 @@ const Map = (props: MapProps) => {
         marker.setIcon(offer.id === idActiveCard ? customMarker : defaultMarker).addTo(markerLayer);
       });
     }
-  }, [map, idActiveCard, offers]);
+  }, [idActiveCard, map, offers]);
 
 
   return (

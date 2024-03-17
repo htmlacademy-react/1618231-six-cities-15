@@ -1,3 +1,4 @@
 import Locations from './ui/locations';
+import { CITIES, Cities } from './ui/cities';
 
-export {Locations};
+export {Locations , CITIES, Cities};
