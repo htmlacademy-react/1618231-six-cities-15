@@ -11,6 +11,7 @@ import { OfferType } from 'src/shared/app-types';
 import { Nullable } from 'vitest';
 import 'leaflet/dist/leaflet.css';
 import { sortingList } from 'src/features/plasces-sorting';
+import { Spinner } from 'src/entities/spinner';
 
 const PageMain = () => {
 
@@ -54,12 +55,12 @@ const PageMain = () => {
       <Locations activeLocation={activeLocation} setActiveLocation={setActiveLocation} />
       <div className="cities">
         <div className="cities__places-container container">
-          <section className="cities__places places">
+          <section className="cities__places places" style={{position: 'relative'}}>
             <h2 className="visually-hidden">Places</h2>
             {fetchStatus === FetchStatus.Fulfilled &&
               < b className="places__found">{currentOffers.length} places to stay in {currentOffers[0].city.name}</b>}
             <PlacesSorting activeSorting={activeSorting} setActiveSorting={setActiveSorting}/>
-            {fetchStatus === FetchStatus.Pending && <div>Идет загрузка</div>}
+            {fetchStatus === FetchStatus.Pending && <Spinner />}
             {fetchStatus === FetchStatus.Fulfilled && <PlacesList offersList ={ getSortedOffers} setActiveCard = {setActiveCard} />}
             {fetchStatus === FetchStatus.Rejected && <div>Ошибка</div>}
           </section>
