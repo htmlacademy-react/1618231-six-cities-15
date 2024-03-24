@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { AxiosInstance } from 'axios';
 import { createAPI } from 'src/shared/api/apiRequest';
-import { AuthData, DetailedOfferType, OfferType, UserReviewsType, UserType } from 'src/shared/app-types';
+import { DetailedOfferType, OfferType, UserReviewsType, UserType } from 'src/shared/app-types';
 import { ApiActions, FetchRoutes } from 'src/shared/constans';
 
 
@@ -28,13 +27,8 @@ export const fetchNearbyOffers = createAsyncThunk(ApiActions.DataFetchNearbyOffe
 });
 
 export const fetchAuthStatus = createAsyncThunk(ApiActions.AuthFetchStatus, async () => {
-  try {
-    const { data } = await api.get<UserType>(FetchRoutes.Login);
-    return data;
-  } catch {
-    const {error} = Response;
-    console.log(error());
-  }
+  const { data } = await api.get<UserType>(FetchRoutes.Login);
+  return data;
 });
 
 // export const fetchUserLogin = createAsyncThunk<void, AuthData>(ApiActions.UserFetchLogin, async (loginData) => {

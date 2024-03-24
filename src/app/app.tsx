@@ -5,7 +5,7 @@ import { Offer } from 'src/pages/offer';
 import { Login } from 'src/pages/login';
 import { Favorites } from 'src/pages/favorites';
 import { PrivatRoute } from 'src/features/privat-route';
-import { AppRoutes, AutorizationStatus } from 'src/shared/constans';
+import { AppRoutes} from 'src/shared/constans';
 import { Layout } from 'src/pages/layout';
 import { useAppSelector } from 'src/shared/hooks';
 
