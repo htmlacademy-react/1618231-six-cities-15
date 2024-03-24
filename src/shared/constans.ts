@@ -33,6 +33,8 @@ export enum ApiActions {
   DataFetchFavorites = 'data/fetchFavoritesOffers',
   DataFetchReviews = 'data/fetchReviews',
   DataFetchNearbyOffers = 'data/fetchNearbyOffers',
+  AuthFetchStatus = 'auth/fetchStatus',
+  UserFetchLogin = 'user/fetchLogin',
 }
 
 export const RATING_STARS = [5,4,3,2,1];

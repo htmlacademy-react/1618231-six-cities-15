@@ -5,8 +5,8 @@ import { PlacesSorting } from 'src/features/plasces-sorting';
 import { Map } from 'src/widgest/map';
 import { useEffect, useMemo, useState } from 'react';
 import { useAppDispatch, useAppSelector } from 'src/shared/hooks';
-import { fetchOffersList } from 'src/app/api-actions';
-import { FetchStatus } from 'src/shared/constans';
+import { fetchAuthStatus, fetchOffersList } from 'src/app/api-actions';
+import { AutorizationStatus, FetchStatus } from 'src/shared/constans';
 import { OfferType } from 'src/shared/app-types';
 import { Nullable } from 'vitest';
 import 'leaflet/dist/leaflet.css';
@@ -17,6 +17,7 @@ const PageMain = () => {
 
   const dispatch = useAppDispatch();
   const fetchStatus = useAppSelector((state) => state.offersList.status);
+  const authStatus = useAppSelector((state) => state.userState.status);
 
   const offersList = useAppSelector((state) => state.offersList.offers);
 
@@ -47,7 +48,11 @@ const PageMain = () => {
     if (fetchStatus === FetchStatus.Idle) {
       dispatch(fetchOffersList());
     }
-  }, [dispatch, fetchStatus]);
+
+    if (authStatus !== AutorizationStatus.Auth) {
+      dispatch(fetchAuthStatus());
+    }
+  }, [authStatus, dispatch, fetchStatus]);
 
   return (
     <main className="page__main page__main--index">
