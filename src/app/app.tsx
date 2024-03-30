@@ -25,7 +25,7 @@ const App = (): JSX.Element => {
 
         {
           path: `${AppRoutes.Offer}/:offerId`,
-          element: <Offer />
+          element: <Offer />,
         },
 
         {

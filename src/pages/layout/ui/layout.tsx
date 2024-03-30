@@ -1,14 +1,24 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { AppRoutes, AutorizationStatus } from 'src/shared/constans';
-import { useAppSelector } from 'src/shared/hooks';
+import { useAppDispatch, useAppSelector } from 'src/shared/hooks';
 import cn from 'classnames';
+import { fetchAuthStatus, fetchUserLogout } from 'src/app/api-actions';
+import { useEffect } from 'react';
 
 const Layout = (): JSX.Element => {
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
   const statusAuth = useAppSelector((state) => state.userState.status);
+  const { email } = useAppSelector((state) => state.userState.user);
+  const dispatch = useAppDispatch();
+  const onLogoutBtnClick = () => {
+    dispatch(fetchUserLogout());
+  };
 
+  useEffect(() => {
+    dispatch(fetchAuthStatus());
+  }, [dispatch]);
   return (
-    <div className={cn('page', { 'page--gray page--main': pathname === AppRoutes.Main as string}, { 'page--gray page--login': pathname === AppRoutes.Login as string})}>
+    <div className={cn('page', { 'page--gray page--main': pathname === AppRoutes.Main as string }, { 'page--gray page--login': pathname === AppRoutes.Login as string })}>
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
@@ -37,14 +47,18 @@ const Layout = (): JSX.Element => {
                       <a className="header__nav-link header__nav-link--profile" href="#">
                         <div className="header__avatar-wrapper user__avatar-wrapper">
                         </div>
-                        <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
+                        <span className="header__user-name user__name">{email}</span>
                         <span className="header__favorite-count">3</span>
                       </a>
                     </li>
                     <li className="header__nav-item">
-                      <a className="header__nav-link" href="#">
+                      <Link
+                        onClick={() => onLogoutBtnClick()}
+                        className="header__nav-link"
+                        to={AppRoutes.Main}
+                      >
                         <span className="header__signout">Sign out</span>
-                      </a>
+                      </Link>
                     </li>
                   </>}
               </ul>

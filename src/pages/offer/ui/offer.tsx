@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchDetailedOffer, fetchNearbyOffers, fetchReviewsList } from 'src/app/api-actions';
+import { PageNotFound } from 'src/pages/page-not-found';
 import { OfferType } from 'src/shared/app-types';
 import { FetchStatus } from 'src/shared/constans';
 import { useAppDispatch, useAppSelector } from 'src/shared/hooks';
@@ -41,6 +42,7 @@ const Offer = (): JSX.Element => {
           reviewsList={reviewsList}
           statusReviews={statusReviews}
         />}
+      {statusOffer === FetchStatus.Rejected && <PageNotFound />}
       <div className="container">
         {statusNearby === FetchStatus.Pending && <div>Идет загрузка</div>}
         {statusNearby === FetchStatus.Fulfilled && <NearbyOffers nearbyOffers={nearbyOffers} setActiveCard={setActiveCard } /> }
