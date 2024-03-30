@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchAuthStatus } from 'src/app/api-actions';
+import { fetchAuthStatus, fetchUserLogin, fetchUserLogout } from 'src/app/api-actions';
 import { UserType } from 'src/shared/app-types';
 import { AutorizationStatus } from 'src/shared/constans';
 
@@ -28,11 +28,26 @@ const userSlice = createSlice({
     builder
       .addCase(fetchAuthStatus.fulfilled, (state, action) => {
         state.user = action.payload;
+        state.status = AutorizationStatus.Auth;
       })
 
       .addCase(fetchAuthStatus.rejected, (state) => {
         state.status = AutorizationStatus.NoAuth;
-      });
+      })
+
+      .addCase(fetchUserLogin.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.status = AutorizationStatus.Auth;
+      })
+
+      .addCase(fetchUserLogin.rejected, (state) => {
+        state.status = AutorizationStatus.NoAuth;
+      })
+
+      .addCase(fetchUserLogout.fulfilled, (state) => {
+        state.status = AutorizationStatus.NoAuth;
+      })
+
   },
 });
 
